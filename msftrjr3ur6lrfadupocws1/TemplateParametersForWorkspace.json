@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"value": "msftrjr3ur6lrfadupocws1"
+		},
+		"CosmosDBLink_connectionString": {
+			"value": ""
+		},
+		"msftrjr3ur6lrfadupocws1-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:msftrjr3ur6lrfadupocws1.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"keyVaultLinkedservice_properties_typeProperties_baseUrl": {
+			"value": "@{concat('https://',linkedService().keyVaultName,'.vault.azure.net/')}"
+		},
+		"msftrjr3ur6lrfadupocws1-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://msftrjr3ur6lrfadupoc.dfs.core.windows.net/"
+		}
+	}
+}
