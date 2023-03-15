@@ -1,0 +1,10 @@
+{
+	"name": "synapse-ws-sql--msftrjr3ur6lrfadupocws1",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/65ec284c-5432-42f7-a13b-bdb6c0aa1e73/resourceGroups/cosmosdbdemo/providers/Microsoft.Synapse/workspaces/msftrjr3ur6lrfadupocws1",
+		"groupId": "sql",
+		"fqdns": [
+			"msftrjr3ur6lrfadupocws1.d58cf80f-6abf-40e7-90d7-160e0be02bb2.sql.azuresynapse.net"
+		]
+	}
+}
