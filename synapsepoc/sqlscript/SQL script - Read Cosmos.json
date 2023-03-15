@@ -1,0 +1,17 @@
+{
+	"name": "SQL script - Read Cosmos",
+	"properties": {
+		"content": {
+			"query": "CREATE CREDENTIAL [cosmossalvadodem]\nWITH IDENTITY = 'SHARED ACCESS SIGNATURE', SECRET = 'wLdsEGGmpG0GH9BJkMHhrOFBjC4hIjgXnLv7sXBMiDK6pGLSceLI3j1XvFv1wboItjV3RaM9oqs3ACDbpBH1eQ=='\n\n\nSELECT TOP 100 *\nFROM OPENROWSET(​PROVIDER = 'CosmosDB',\n                CONNECTION = 'Account=cosmossalvadodem;Database=CosmosDemoDB',\n                OBJECT = 'Products',\n                SERVER_CREDENTIAL = 'cosmossalvadodem'\n) AS [Products]\n\n\nSELECT TOP 100 *\nFROM OPENROWSET( \n       'CosmosDB',\n       'account=cosmossalvadodem;database=CosmosDemoDB;key=wLdsEGGmpG0GH9BJkMHhrOFBjC4hIjgXnLv7sXBMiDK6pGLSceLI3j1XvFv1wboItjV3RaM9oqs3ACDbpBH1eQ==',\n       Products\n    ) AS [Products]\n\n\nAccountEndpoint=https://<database account name>.documents.azure.com:443/;AccountKey=<database account master key>;\n'account=cosmossalvadodem;database=Products;key=<wLdsEGGmpG0GH9BJkMHhrOFBjC4hIjgXnLv7sXBMiDK6pGLSceLI3j1XvFv1wboItjV3RaM9oqs3ACDbpBH1eQ=='\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
